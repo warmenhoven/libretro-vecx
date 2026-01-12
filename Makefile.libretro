@@ -38,6 +38,10 @@ else ifneq ($(findstring MINGW,$(shell uname -s)),)
    system_platform = win
 endif
 
+ifneq (,$(findstring webos,$(CROSS_COMPILE)))
+   HAS_GLES=1
+endif
+
 CORE_DIR := .
 
 TARGET_NAME := vecx
